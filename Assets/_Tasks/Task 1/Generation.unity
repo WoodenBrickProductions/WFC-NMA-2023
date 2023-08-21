@@ -338,11 +338,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a83d9793f4a35d419e44088f45283ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimensions: 30
-  tileObjects:
+  dimensions: 20
+  generationTiles:
   - {fileID: 11400000, guid: 3d88962ae6587a84d8951f9153a603e2, type: 2}
+  - {fileID: 11400000, guid: 09f0fcbd9c6b22d41962b6c9fbe4130c, type: 2}
   - {fileID: 11400000, guid: 0aaa68d3c3ed8b14e80c742866062c8b, type: 2}
+  - {fileID: 11400000, guid: 1222c34953b6cfe459ea1223c361c934, type: 2}
+  - {fileID: 11400000, guid: 48708bccecbd1984b857a417ddb38f59, type: 2}
+  - {fileID: 11400000, guid: c763fc11172173a4793b09f9b84f76e4, type: 2}
+  - {fileID: 11400000, guid: 1fbf1a95c8cdb384b878c3c4b2d15540, type: 2}
+  - {fileID: 11400000, guid: 485cfe39bf75ac6458db9a4e60b0047c, type: 2}
+  - {fileID: 11400000, guid: a022ca0d78179ae4190b50268ab67349, type: 2}
+  - {fileID: 11400000, guid: 950dfaf4a0692b948b8fb4c18b83d0aa, type: 2}
+  - {fileID: 11400000, guid: d1798df7310b29d4e9f7e26c3d0710e8, type: 2}
   - {fileID: 11400000, guid: 55f8813d5f167d14f81c8d514b78cc86, type: 2}
+  - {fileID: 11400000, guid: 23e2df205f53fe948bbe2e1a4df4ab9a, type: 2}
+  - {fileID: 11400000, guid: 2dfd0b0c8730be740a39959af79ca14b, type: 2}
+  - {fileID: 11400000, guid: ae32ae9d2cf895c40aa566d8f0351da1, type: 2}
+  - {fileID: 11400000, guid: 7322ef4fd5057b44cb18f0341c4a061e, type: 2}
   - {fileID: 11400000, guid: 7217d057bea33ca469bc46007883c733, type: 2}
   - {fileID: 11400000, guid: 7000381d9921c8648a161c7148a7b105, type: 2}
   - {fileID: 11400000, guid: 8cef588a45f69394392963cf7787d62f, type: 2}
@@ -355,13 +368,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f02185c1331bcb842ab04b005355e721, type: 2}
   - {fileID: 11400000, guid: 597120e612ee44144b76e6d076e76f67, type: 2}
   - {fileID: 11400000, guid: 8c554fd6cb92e694291db821803cd038, type: 2}
-  - {fileID: 11400000, guid: 1222c34953b6cfe459ea1223c361c934, type: 2}
-  - {fileID: 11400000, guid: 48708bccecbd1984b857a417ddb38f59, type: 2}
-  - {fileID: 11400000, guid: 23e2df205f53fe948bbe2e1a4df4ab9a, type: 2}
-  - {fileID: 11400000, guid: 09f0fcbd9c6b22d41962b6c9fbe4130c, type: 2}
-  gridComponents: []
+  tilemapComponents: []
   cellObj: {fileID: 1394530843787340310, guid: 318d2188acfc40241a7c4c5936285287, type: 3}
   spacing: 10
+  fallbackTile: {fileID: 11400000, guid: 09f0fcbd9c6b22d41962b6c9fbe4130c, type: 2}
 --- !u!4 &653791354
 Transform:
   m_ObjectHideFlags: 0

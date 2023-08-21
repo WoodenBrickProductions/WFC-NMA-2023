@@ -95,7 +95,6 @@ public class Solver : MonoBehaviour
 
                 if (positionedTiles.ContainsKey((x + dX, y + dY)))
                 {
-                    //TileObject adjacent = GetTileObject(x + dX, y + dY);
                     TileObject adjacent = positionedTiles[(x + dX, y + dY)];
                     int adjRotation = Mathf.RoundToInt((adjacent.transform.localEulerAngles.y + 360) % 360 / 90); //Note (Tautvydas): do not use rotation of SO, only base SO's with rotation 0 are assigned
 
