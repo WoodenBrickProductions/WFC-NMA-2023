@@ -15,9 +15,13 @@ public class CameraMove : MonoBehaviour
     public Transform TRBound;
     public Transform BLBound;
 
+    private TileObject current;
+
     void Update()
     {
         MoveCamera();
+
+        current = GetTileObjectUnderCursor();
     }
     private void MoveCamera()
     {
@@ -40,5 +44,30 @@ public class CameraMove : MonoBehaviour
             z = 0;
 
         cameraTM.position += new Vector3(x, 0, z);
+    }
+
+    //public static Vector3 GetMouseWorldPosition()
+    //{
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    float distance;
+    //    if (mousePlane.Raycast(ray, out distance))
+    //    {
+    //        return ray.GetPoint(distance);
+    //    }
+
+    //    return Vector3.zero;
+    //}
+
+    TileObject GetTileObjectUnderCursor()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitData;
+        if (Physics.Raycast(ray, out hitData, 1000))
+        {
+            var unit = hitData.collider.GetComponentInParent<TileObject>();
+            return unit;
+        }
+
+        return null;
     }
 }

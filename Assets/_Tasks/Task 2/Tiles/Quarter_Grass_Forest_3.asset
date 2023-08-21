@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8f96359f9958c4fac8c479e72a37fc, type: 3}
+  m_Name: Quarter_Grass_Forest_3
+  m_EditorClassIdentifier: 
+  id: 5
+  prefab: {fileID: 3980685303411168916, guid: e873b4790f7d30d40bc8424347b40af7, type: 3}
+  rotation: 3
+  upNeighbours:
+  - {fileID: 11400000, guid: 8cef588a45f69394392963cf7787d62f, type: 2}
+  rightNeighbours:
+  - {fileID: 11400000, guid: 7217d057bea33ca469bc46007883c733, type: 2}
+  - {fileID: 11400000, guid: a1775266f900cde4a99a78bc069b4398, type: 2}
+  downNeighbours:
+  - {fileID: 11400000, guid: 597120e612ee44144b76e6d076e76f67, type: 2}
+  leftNeighbours:
+  - {fileID: 11400000, guid: a1775266f900cde4a99a78bc069b4398, type: 2}
+  - {fileID: 11400000, guid: 0aaa68d3c3ed8b14e80c742866062c8b, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8f96359f9958c4fac8c479e72a37fc, type: 3}
+  m_Name: Base_Deep_0
+  m_EditorClassIdentifier: 
+  id: 9
+  prefab: {fileID: 3104054592412862161, guid: af497334332b5114c81d7474876a2991, type: 3}
+  rotation: 0
+  upNeighbours:
+  - {fileID: 11400000, guid: 3d88962ae6587a84d8951f9153a603e2, type: 2}
+  - {fileID: 11400000}
+  rightNeighbours:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 3d88962ae6587a84d8951f9153a603e2, type: 2}
+  downNeighbours:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 3d88962ae6587a84d8951f9153a603e2, type: 2}
+  leftNeighbours:
+  - {fileID: 11400000, guid: 3d88962ae6587a84d8951f9153a603e2, type: 2}
+  - {fileID: 11400000}

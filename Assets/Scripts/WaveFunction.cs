@@ -14,6 +14,8 @@ public class WaveFunction : MonoBehaviour
     int iterations = 0;                     // Iteration of tilemap generation
     public Tile fallbackTile;               // Tile used for in case there are no tile options for a given Cell
 
+    WaitForSeconds wait = new WaitForSeconds(0.01f);
+
     // Initialization of Scene
     void Awake()
     {
@@ -111,7 +113,7 @@ public class WaveFunction : MonoBehaviour
         }
 
         // Used to create delay in visualization
-        yield return new WaitForSeconds(0.01f);
+        yield return wait;
 
         CollapseCell(tempTilemap);
     }
