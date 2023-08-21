@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8f96359f9958c4fac8c479e72a37fc, type: 3}
+  m_Name: Half_Forest_Grass_1
+  m_EditorClassIdentifier: 
+  id: 3
+  prefab: {fileID: 5018775858007051272, guid: 44136349ced5335429e7e1affeea3f5b, type: 3}
+  rotation: 1
+  upNeighbours:
+  - {fileID: 11400000, guid: 55f8813d5f167d14f81c8d514b78cc86, type: 2}
+  - {fileID: 11400000, guid: 23e2df205f53fe948bbe2e1a4df4ab9a, type: 2}
+  - {fileID: 11400000, guid: d16e04aa2878cfd4d8cba448f4285cf5, type: 2}
+  rightNeighbours:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 0aaa68d3c3ed8b14e80c742866062c8b, type: 2}
+  - {fileID: 11400000, guid: 83446eaf8e818ab44bc34e97c7c3f717, type: 2}
+  downNeighbours:
+  - {fileID: 11400000, guid: d16e04aa2878cfd4d8cba448f4285cf5, type: 2}
+  - {fileID: 11400000, guid: 0aaa68d3c3ed8b14e80c742866062c8b, type: 2}
+  - {fileID: 11400000, guid: 1222c34953b6cfe459ea1223c361c934, type: 2}
+  - {fileID: 11400000, guid: 48708bccecbd1984b857a417ddb38f59, type: 2}
+  leftNeighbours:
+  - {fileID: 11400000, guid: 3d88962ae6587a84d8951f9153a603e2, type: 2}
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: ca161a294baca2248820e72675b1d3df, type: 2}
