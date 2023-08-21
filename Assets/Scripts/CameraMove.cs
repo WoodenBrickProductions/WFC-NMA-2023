@@ -27,7 +27,10 @@ public class CameraMove : MonoBehaviour
     }
     private void MoveCamera()
     {
-        if(Input.GetKey(KeyCode.LeftShift))
+        if (!Application.isFocused)
+            return;
+
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             Camera.main.transform.position += 10 * acceleration * Vector3.up * Time.deltaTime;
             acceleration += 3 * Time.deltaTime;
@@ -43,8 +46,6 @@ public class CameraMove : MonoBehaviour
         {
             acceleration = 1;
         }
-
-
 
         int horizontal = ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) || (cameraScroll && Input.mousePosition.x < fastDragDeadzone) ? -1 : 0) +
                          ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) || (cameraScroll && Input.mousePosition.x > Screen.width - fastDragDeadzone) ? 1 : 0);
