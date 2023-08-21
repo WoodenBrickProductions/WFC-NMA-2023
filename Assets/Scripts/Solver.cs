@@ -14,9 +14,12 @@ public class Solver : MonoBehaviour
     [SerializeField] private int mapX = 100;
     [SerializeField] private int mapY = 100;
     [SerializeField] private Tile[,] tilemap;
-    [SerializeField] private int spacing = 5;
+    [SerializeField] private int spacing = 10;
     [SerializeField] private bool clearBaseTiles = false;
+    [SerializeField] private TileObject defaultTile;
     private TileObject[] allTileObjs;
+
+    private bool active = false;
 
     private void Awake()
     {
@@ -36,27 +39,12 @@ public class Solver : MonoBehaviour
         }
 
         allTileObjs = GetComponentsInChildren<TileObject>(true);
-    }
 
-    void Start()
-    {
-        SolveVariants();
-
-        AssetDatabase.Refresh();
-        foreach(Tile tile in baseTiles.Values)
-        {
-            EditorUtility.SetDirty(tile);
-        }
-        AssetDatabase.SaveAssets();
-    }
-
-    public void SolveVariants()
-    {
         for (int i = 0; i < transform.childCount; i++)
         {
             var tileObject = transform.GetChild(i).GetComponent<TileObject>();
             int x = Mathf.RoundToInt(tileObject.transform.position.x / spacing);
-            int y = Mathf.RoundToInt(-tileObject.transform.position.z / spacing);
+            int y = Mathf.RoundToInt(tileObject.transform.position.z / spacing);
 
             if (positionedTiles.ContainsKey((x, y)))
                 Debug.Log("" + x + " " + y + tileObject.name);
@@ -66,6 +54,37 @@ public class Solver : MonoBehaviour
 
         var height = positionedTiles.Count / width;
 
+        for (int x = 0; x < mapX; x++)
+        {
+            for(int y = 0; y < mapY; y++)
+            {
+                if (!positionedTiles.ContainsKey((x, y)))
+                {
+                    positionedTiles[(x, y)] = Instantiate(defaultTile, new Vector3(x * spacing, 0, y * spacing), Quaternion.identity);
+                }
+            }
+        }
+    }
+    
+    private void Update()
+    {
+        if(!active && Input.GetKeyDown(KeyCode.Space))
+        {
+            active = true;
+            SolveVariants();
+
+            AssetDatabase.Refresh();
+            foreach (Tile tile in baseTiles.Values)
+            {
+                EditorUtility.SetDirty(tile);
+            }
+            AssetDatabase.SaveAssets();
+            active = false;
+        }
+    }
+
+    public void SolveVariants()
+    {
         foreach(TileObject current in allTileObjs)
         {
             for (int dir = 0; dir < 4; dir++)

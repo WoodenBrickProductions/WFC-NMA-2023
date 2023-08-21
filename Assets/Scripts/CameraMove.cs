@@ -24,6 +24,12 @@ public class CameraMove : MonoBehaviour
         MoveCamera();
 
         current = GetTileObjectUnderCursor();
+
+        if(current != null && Input.GetMouseButtonDown(0))
+        {
+            Destroy(current.gameObject);
+            current = null;
+        }
     }
     private void MoveCamera()
     {
