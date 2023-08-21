@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8f96359f9958c4fac8c479e72a37fc, type: 3}
+  m_Name: Grass_0
+  m_EditorClassIdentifier: 
+  id: 2
+  prefab: {fileID: 6954815833465865068, guid: 4e823b3f53206a14ea811f244cae71a6, type: 3}
+  rotation: 0
+  upNeighbours:
+  - {fileID: 11400000, guid: f7615fe73ccfe7f4099e999ffc74c8a8, type: 2}
+  - {fileID: 11400000, guid: 9b6fb1bec26084e4685e68872a2362fc, type: 2}
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 12cc557d07e59614faf202da0d9fd840, type: 2}
+  - {fileID: 11400000, guid: 2c9de9ec102b93e4bb630c0a5297e57e, type: 2}
+  rightNeighbours:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 9b6fb1bec26084e4685e68872a2362fc, type: 2}
+  - {fileID: 11400000, guid: 9ac494d093ff3394b9c1b0e6138541bb, type: 2}
+  - {fileID: 11400000, guid: 2c9de9ec102b93e4bb630c0a5297e57e, type: 2}
+  - {fileID: 11400000, guid: 12cc557d07e59614faf202da0d9fd840, type: 2}
+  downNeighbours:
+  - {fileID: 11400000, guid: 12cc557d07e59614faf202da0d9fd840, type: 2}
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 9ac494d093ff3394b9c1b0e6138541bb, type: 2}
+  - {fileID: 11400000, guid: be0e8a5c358a2d44cae633239ee45e4a, type: 2}
+  - {fileID: 11400000, guid: 2c9de9ec102b93e4bb630c0a5297e57e, type: 2}
+  leftNeighbours:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 12cc557d07e59614faf202da0d9fd840, type: 2}
+  - {fileID: 11400000, guid: be0e8a5c358a2d44cae633239ee45e4a, type: 2}
+  - {fileID: 11400000, guid: f7615fe73ccfe7f4099e999ffc74c8a8, type: 2}
+  - {fileID: 11400000, guid: 2c9de9ec102b93e4bb630c0a5297e57e, type: 2}

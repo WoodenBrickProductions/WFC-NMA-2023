@@ -15,21 +15,13 @@ public class CameraMove : MonoBehaviour
     public Transform TRBound;
     public Transform BLBound;
 
-    private TileObject current;
-
     float acceleration;
 
     void Update()
     {
         MoveCamera();
 
-        current = GetTileObjectUnderCursor();
 
-        if(current != null && Input.GetMouseButtonDown(0))
-        {
-            Destroy(current.gameObject);
-            current = null;
-        }
     }
     private void MoveCamera()
     {
@@ -85,17 +77,4 @@ public class CameraMove : MonoBehaviour
 
     //    return Vector3.zero;
     //}
-
-    TileObject GetTileObjectUnderCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitData;
-        if (Physics.Raycast(ray, out hitData, 1000))
-        {
-            var unit = hitData.collider.GetComponentInParent<TileObject>();
-            return unit;
-        }
-
-        return null;
-    }
 }

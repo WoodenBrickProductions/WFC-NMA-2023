@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8f96359f9958c4fac8c479e72a37fc, type: 3}
+  m_Name: Grass_Cat_0
+  m_EditorClassIdentifier: 
+  id: 8
+  prefab: {fileID: 6954815833465865068, guid: a7d752be7128b1b46ac3fea89cf69b80, type: 3}
+  rotation: 0
+  upNeighbours:
+  - {fileID: 11400000, guid: eab62b3b0f7921b48bace6976141622c, type: 2}
+  - {fileID: 11400000, guid: 769536519c14cff4bbe20a3bb0e45fb7, type: 2}
+  rightNeighbours:
+  - {fileID: 11400000, guid: eab62b3b0f7921b48bace6976141622c, type: 2}
+  downNeighbours:
+  - {fileID: 11400000, guid: 57360633650c8cf48b3ad700bb4e64f9, type: 2}
+  - {fileID: 11400000, guid: eab62b3b0f7921b48bace6976141622c, type: 2}
+  leftNeighbours:
+  - {fileID: 11400000, guid: eab62b3b0f7921b48bace6976141622c, type: 2}

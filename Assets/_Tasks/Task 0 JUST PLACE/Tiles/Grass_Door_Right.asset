@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8f96359f9958c4fac8c479e72a37fc, type: 3}
+  m_Name: Grass_Door_Right
+  m_EditorClassIdentifier: 
+  id: 21
+  prefab: {fileID: 4633168999044959093, guid: 7ab4f8200ce37694fa1473e62ea6d747, type: 3}
+  rotation: 0
+  upNeighbours:
+  - {fileID: 11400000, guid: d500fae989f626241bbb550ce85bd8cf, type: 2}
+  rightNeighbours:
+  - {fileID: 11400000, guid: d500fae989f626241bbb550ce85bd8cf, type: 2}
+  downNeighbours:
+  - {fileID: 11400000, guid: f7615fe73ccfe7f4099e999ffc74c8a8, type: 2}
+  leftNeighbours:
+  - {fileID: 11400000, guid: 9ac494d093ff3394b9c1b0e6138541bb, type: 2}

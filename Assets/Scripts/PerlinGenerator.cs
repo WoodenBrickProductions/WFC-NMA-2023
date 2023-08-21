@@ -9,7 +9,8 @@ public class PerlinGenerator : MonoBehaviour
     public List<Cell> tilemapComponents;    // Every cell of the map
     public Cell cellObj;                    // Default Cell object for creation
     public float spacing = 10;              // Distance between tilemap cells
-    
+    public bool skipWait = false;
+
     public float xMapScaling = 100;
     public float yMapScaling = 100;
 
@@ -23,7 +24,15 @@ public class PerlinGenerator : MonoBehaviour
 
         InitializeCells();
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            skipWait = true;
+        }
+    }
+
     // Initialization of tilemap cells
     void InitializeCells()
     {
@@ -57,7 +66,11 @@ public class PerlinGenerator : MonoBehaviour
             float height = (Mathf.PerlinNoise(x / spacing / xMapScaling, y / spacing / yMapScaling) - baseMap) * 1000;
 
             Instantiate(generationTiles[tile].prefab, cell.transform.position + Vector3.up * height, Quaternion.Euler(new Vector3(0, 0, 0)));
-            //yield return wait;
+            
+            if(!skipWait)
+            {
+                yield return wait;
+            }
         }
 
         yield return 0;

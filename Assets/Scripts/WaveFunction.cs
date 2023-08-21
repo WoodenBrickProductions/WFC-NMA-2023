@@ -13,6 +13,8 @@ public class WaveFunction : MonoBehaviour
     public float spacing = 10;              // Distance between tilemap cells
     int iterations = 0;                     // Iteration of tilemap generation
     public Tile fallbackTile;               // Tile used for in case there are no tile options for a given Cell
+    private List<TileObject> placedTiles;   // All placed tiles on the map
+    bool generationRunning = false;
 
     WaitForSeconds wait = new WaitForSeconds(0.01f);
 
@@ -21,13 +23,20 @@ public class WaveFunction : MonoBehaviour
     {
         tilemapComponents = new List<Cell>();
 
-        SanitizeGenerationTiles(generationTiles);
+        SanitizeGenerationTiles();
+    }
 
-        InitializeCells();
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && !generationRunning)
+        {
+            generationRunning = true;
+            InitializeCells();
+        }
     }
 
     // Take out tiles from generationTiles that do not have any rules for placement
-    private void SanitizeGenerationTiles(Tile[] generationTiles)
+    private void SanitizeGenerationTiles()
     {
         int count = 0;
         for (int i = 0; i < generationTiles.Length; i++)
@@ -67,11 +76,34 @@ public class WaveFunction : MonoBehaviour
                 newTiles[count++] = tile;
             }
         }
+
+        this.generationTiles = newTiles;
     }
 
     // Initialization of tilemap cells
     void InitializeCells()
     {
+        iterations = 0;
+
+        foreach(Cell cell in tilemapComponents)
+        {
+            Destroy(cell.gameObject);
+        }
+
+        tilemapComponents.Clear();
+
+        if(placedTiles != null && placedTiles.Count > 0)
+        {
+            foreach(TileObject tile in placedTiles)
+            {
+                Destroy(tile.gameObject);
+            }
+
+            placedTiles.Clear();
+        }
+
+        placedTiles = new List<TileObject>();
+
         for (int y = 0; y < dimensions; y++)
         {
             for (int x = 0; x < dimensions; x++)
@@ -84,8 +116,6 @@ public class WaveFunction : MonoBehaviour
 
         StartCoroutine(CheckEntropy());
     }
-
-///////////////////////////////// ------- START HERE --------- //////////////////////////////////////////
 
     IEnumerator CheckEntropy()
     {
@@ -176,7 +206,6 @@ public class WaveFunction : MonoBehaviour
     }
 
     // Update neighboring tiles to align with the rules of neighboring tiles
-    // TODO: Clean this up
     void UpdateGeneration()
     {
         List<Cell> newGenerationCell = new List<Cell>(tilemapComponents);
@@ -208,6 +237,9 @@ public class WaveFunction : MonoBehaviour
                         foreach (Tile possibleOptions in up.tileOptions)
                         {
                             var valOption = Array.FindIndex(generationTiles, obj => obj == possibleOptions);
+                            if (valOption == -1)
+                                continue;
+                            
                             var valid = generationTiles[valOption].upNeighbours;
 
                             validOptions = validOptions.Concat(valid).ToList();
@@ -225,6 +257,9 @@ public class WaveFunction : MonoBehaviour
                         foreach (Tile possibleOptions in right.tileOptions)
                         {
                             var valOption = Array.FindIndex(generationTiles, obj => obj == possibleOptions);
+                            if (valOption == -1)
+                                continue;
+
                             var valid = generationTiles[valOption].leftNeighbours;
 
                             validOptions = validOptions.Concat(valid).ToList();
@@ -242,6 +277,9 @@ public class WaveFunction : MonoBehaviour
                         foreach (Tile possibleOptions in down.tileOptions)
                         {
                             var valOption = Array.FindIndex(generationTiles, obj => obj == possibleOptions);
+                            if (valOption == -1)
+                                continue;
+
                             var valid = generationTiles[valOption].downNeighbours;
 
                             validOptions = validOptions.Concat(valid).ToList();
@@ -259,6 +297,9 @@ public class WaveFunction : MonoBehaviour
                         foreach (Tile possibleOptions in left.tileOptions)
                         {
                             var valOption = Array.FindIndex(generationTiles, obj => obj == possibleOptions);
+                            if (valOption == -1)
+                                continue;
+
                             var valid = generationTiles[valOption].rightNeighbours;
 
                             validOptions = validOptions.Concat(valid).ToList();
@@ -285,6 +326,10 @@ public class WaveFunction : MonoBehaviour
         {
             StartCoroutine(CheckEntropy());
         }
+        else
+        {
+            generationRunning = false;
+        }
 
     }
 
@@ -307,14 +352,16 @@ public class WaveFunction : MonoBehaviour
             selectedTile = fallbackTile;
         }
 
-        // TODO: is this needed?
         cellToCollapse.tileOptions = new Tile[] { selectedTile };
 
         Tile foundTile = cellToCollapse.tileOptions[0];
         
         // Asking Unity to place the tile on the tilemap with the specified rotation;
-        Instantiate(foundTile.prefab, cellToCollapse.transform.position, Quaternion.Euler(new Vector3(0, foundTile.rotation * 90, 0)));
-        
+        GameObject go = Instantiate(foundTile.prefab, cellToCollapse.transform.position, Quaternion.Euler(new Vector3(0, foundTile.rotation * 90, 0)));
+
+        // Keeping track of placed tiles so we can remove for re-generation
+        placedTiles.Add(go.GetComponent<TileObject>());
+
         // Since this cell was collapsed we're increasing the iteration count, so we know when to stop the generation
         iterations++;
     }
