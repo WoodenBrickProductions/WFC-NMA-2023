@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a83d9793f4a35d419e44088f45283ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimensions: 20
+  dimensions: 40
   generationTiles:
   - {fileID: 11400000, guid: 3d88962ae6587a84d8951f9153a603e2, type: 2}
   - {fileID: 11400000, guid: 09f0fcbd9c6b22d41962b6c9fbe4130c, type: 2}
