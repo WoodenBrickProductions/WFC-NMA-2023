@@ -15,24 +15,7 @@ MonoBehaviour:
   id: 3
   prefab: {fileID: 5018775858007051272, guid: 44136349ced5335429e7e1affeea3f5b, type: 3}
   rotation: 2
-  upNeighbours:
-  - {fileID: 11400000, guid: 769536519c14cff4bbe20a3bb0e45fb7, type: 2}
-  - {fileID: 11400000, guid: e84fc10630db18f459d108b4d4883d99, type: 2}
-  - {fileID: 11400000, guid: 9d9ea373160e9a243958aec142a76921, type: 2}
-  - {fileID: 11400000, guid: 78e8f242e320a1d409edbe6cd9a12689, type: 2}
-  rightNeighbours:
-  - {fileID: 11400000, guid: eab62b3b0f7921b48bace6976141622c, type: 2}
-  - {fileID: 11400000, guid: 769536519c14cff4bbe20a3bb0e45fb7, type: 2}
-  - {fileID: 11400000, guid: 0e3e9ef7ba2b8094dba2e3633aff9138, type: 2}
-  - {fileID: 11400000, guid: 55ac31084717356418df04e4ad4e5725, type: 2}
-  downNeighbours:
-  - {fileID: 11400000, guid: 769536519c14cff4bbe20a3bb0e45fb7, type: 2}
-  - {fileID: 11400000, guid: 9d9ea373160e9a243958aec142a76921, type: 2}
-  - {fileID: 11400000, guid: 7b18da5cf632b404daf994b7ea35ab05, type: 2}
-  - {fileID: 11400000, guid: 69069c60e4dc92d4cbbfba5d51eec104, type: 2}
-  leftNeighbours:
-  - {fileID: 11400000, guid: 769536519c14cff4bbe20a3bb0e45fb7, type: 2}
-  - {fileID: 11400000, guid: 0e3e9ef7ba2b8094dba2e3633aff9138, type: 2}
-  - {fileID: 11400000, guid: 9d9ea373160e9a243958aec142a76921, type: 2}
-  - {fileID: 11400000, guid: 9bb9b3884a98df342a0396ff313ced0b, type: 2}
-  - {fileID: 11400000, guid: 32b9ee671d4413442adb25b72e1cfea5, type: 2}
+  upNeighbours: []
+  rightNeighbours: []
+  downNeighbours: []
+  leftNeighbours: []

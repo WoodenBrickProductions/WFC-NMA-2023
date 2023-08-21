@@ -15,15 +15,7 @@ MonoBehaviour:
   id: 4
   prefab: {fileID: 586591577667771098, guid: bed12ab35a7168c47bcc6343748e90d4, type: 3}
   rotation: 0
-  upNeighbours:
-  - {fileID: 11400000, guid: 337ee61fff77d24439d660bfb3442fa9, type: 2}
-  - {fileID: 11400000, guid: 78e8f242e320a1d409edbe6cd9a12689, type: 2}
-  rightNeighbours:
-  - {fileID: 11400000, guid: 93f1021078d14c748bc94925ad644ddc, type: 2}
-  - {fileID: 11400000, guid: 57360633650c8cf48b3ad700bb4e64f9, type: 2}
-  downNeighbours:
-  - {fileID: 11400000, guid: 9d9ea373160e9a243958aec142a76921, type: 2}
-  - {fileID: 11400000, guid: 076cae707f69ac64fac3cf365bcca065, type: 2}
-  leftNeighbours:
-  - {fileID: 11400000, guid: 9d9ea373160e9a243958aec142a76921, type: 2}
-  - {fileID: 11400000, guid: 93f1021078d14c748bc94925ad644ddc, type: 2}
+  upNeighbours: []
+  rightNeighbours: []
+  downNeighbours: []
+  leftNeighbours: []

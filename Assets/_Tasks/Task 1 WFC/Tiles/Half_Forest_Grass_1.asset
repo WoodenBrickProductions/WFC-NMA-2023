@@ -15,20 +15,7 @@ MonoBehaviour:
   id: 3
   prefab: {fileID: 5018775858007051272, guid: 44136349ced5335429e7e1affeea3f5b, type: 3}
   rotation: 1
-  upNeighbours:
-  - {fileID: 11400000, guid: eab62b3b0f7921b48bace6976141622c, type: 2}
-  - {fileID: 11400000, guid: 9b23c68d8a579b749aefaf29ea75bb6c, type: 2}
-  - {fileID: 11400000, guid: b9c6f056d1dd6cc4bba2343d6962dedb, type: 2}
-  rightNeighbours:
-  - {fileID: 11400000}
-  - {fileID: 11400000, guid: 9d9ea373160e9a243958aec142a76921, type: 2}
-  - {fileID: 11400000, guid: 93f1021078d14c748bc94925ad644ddc, type: 2}
-  downNeighbours:
-  - {fileID: 11400000, guid: b9c6f056d1dd6cc4bba2343d6962dedb, type: 2}
-  - {fileID: 11400000, guid: 9d9ea373160e9a243958aec142a76921, type: 2}
-  - {fileID: 11400000, guid: 32b9ee671d4413442adb25b72e1cfea5, type: 2}
-  - {fileID: 11400000, guid: 076cae707f69ac64fac3cf365bcca065, type: 2}
-  leftNeighbours:
-  - {fileID: 11400000, guid: 769536519c14cff4bbe20a3bb0e45fb7, type: 2}
-  - {fileID: 11400000}
-  - {fileID: 11400000, guid: 69069c60e4dc92d4cbbfba5d51eec104, type: 2}
+  upNeighbours: []
+  rightNeighbours: []
+  downNeighbours: []
+  leftNeighbours: []
